@@ -5,4 +5,5 @@
    #- update_upgrade
    #- linux-tools
    #- jenkins
-   - docker
+   #- docker
+   - maven

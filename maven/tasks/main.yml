@@ -1,0 +1,4 @@
+---
+- name: Maven Installation
+  become: yes
+  yum: pkg=maven state=latest
