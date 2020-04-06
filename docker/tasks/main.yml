@@ -16,4 +16,10 @@
    name: docker
    state: started
    enabled: yes
+- name:  Installing Docker Compose
+  become: true
+  yum:
+   name: docker-compose.noarch
+   state: present
+   
 ...
