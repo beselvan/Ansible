@@ -21,6 +21,7 @@
    state: started
    enabled: true
 - name: Get init password Jenkins
+  become: true
   shell: cat /var/lib/jenkins/secrets/initialAdminPassword
   changed_when: false
   register: result
