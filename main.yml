@@ -1,0 +1,8 @@
+- hosts: web
+  become: true
+
+  roles:
+   #- update_upgrade
+   #- linux-tools
+   #- jenkins
+   - docker

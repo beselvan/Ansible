@@ -1,0 +1,17 @@
+---
+- name: OS Upgrade Task
+  yum: name=* state=latest
+
+- name: Linux Basic Utilities install
+  yum:
+   state: present
+   name: 
+    - git
+    - zip
+    - unzip
+    - tar
+    - net-tools
+    - ntsysv
+    - java-1.8.0-openjdk.x86_64
+
+  
