@@ -1,5 +1,4 @@
-# Ansible
-
+# Installation of software packages to remote host through Ansible
 
 1. Clone the repo to your server
 2. Update the host ip in invertory.yml
