@@ -2,8 +2,8 @@
   become: true
 
   roles:
-   #- update_upgrade
-   #- linux-tools
-   #- jenkins
-   #- docker
+   - update_upgrade
+   - linux-tools
+   - jenkins
+   - docker
    - maven
