@@ -1,5 +1,5 @@
 ---
-- name: Jenkins Installation
+- name: Jenkins Repo download
   get_url:
    url: http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
    dest: /etc/yum.repos.d/jenkins.repo
@@ -13,6 +13,14 @@
   yum:
    name: jenkins
    state: present
+
+- name: Jenkins job creation
+  copy:
+   src: ./files/LoginApp
+   dest: /var/lib/jenkins/jobs/
+   owner: jenkins
+  tags: copy
+
 - name: Adding jenkins user to docker
   user:
     name: jenkins
@@ -24,6 +32,8 @@
    name: jenkins
    state: started
    enabled: true
+  tags: restart
+
 - name: Get init password Jenkins
   become: true
   shell: cat /var/lib/jenkins/secrets/initialAdminPassword
