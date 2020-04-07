@@ -5,6 +5,10 @@
    url: https://download.docker.com/linux/centos/docker-ce.repo
    dest: /etc/yum.repos.d/docker-ce.repo
    mode: 0644
+- name: Creating group docker
+  group:
+    name: docker
+    state: present
 - name:  Installing Docker latest version
   become: true
   yum:
