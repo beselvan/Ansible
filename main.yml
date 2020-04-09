@@ -1,6 +1,6 @@
 - hosts: web
   become: true
-
+  serial: 2
   roles:
    - linux-tools
    - mvn

@@ -11,9 +11,9 @@
    register: mavenlog
    tags: maven
 
- - debug:
-    var: mavenlog
-   tags: maven
+# - debug:
+#    var: mavenlog
+#   tags: maven
 
  - name: Docker-Compose the package
    become: true
@@ -21,7 +21,7 @@
    register: log
    tags: docker
 
- - name: Docker-Compose the package
-   debug:
-    var: log
-   tags: docker
+# - name: Docker-Compose the package
+#   debug:
+#    var: log
+#   tags: docker
