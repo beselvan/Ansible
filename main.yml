@@ -1,6 +1,5 @@
-- hosts: 127.0.0.1
+- hosts: web
   become: true
-  serial: 2
   roles:
    - linux-tools
    - mvn
