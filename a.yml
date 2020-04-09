@@ -1,0 +1,14 @@
+---
+- hosts: web
+  vars_prompt:
+    - name: "url"
+      prompt: "Which version Do you want to install?"
+
+  tasks:
+    - name: Ansible prompt example.
+      debug:
+        msg: "{{ url }}"
+    - name: Checkout The Code From Github Using Ansible.
+      shell: git clone '{{ url }}'
+
+  
