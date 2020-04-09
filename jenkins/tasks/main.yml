@@ -4,11 +4,6 @@
 #   url: http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
 #   dest: /etc/yum.repos.d/jenkins.repo
 #
-#- name: Jenkins Key Importing
-#  rpm_key:
-#    state: present
-#    key: https://jenkins-ci.org/redhat/jenkins-ci.org.key
-
 
 - name: Jenkins Repo download
   copy:
@@ -20,9 +15,12 @@
    src: ./files/jenkins-ci.org.key
    dest: /etc/yum.repos.d/
 
+
 - name: Jenkins Key Importing
-  become: true
-  shell: "rpm --import /etc/yum.repos.d/jenkins-ci.org.key"
+  rpm_key:
+    state: present
+    key: /etc/yum.repos.d/jenkins-ci.org.key
+  tags: key
 
 - name: Jenkins Installation
   yum:
