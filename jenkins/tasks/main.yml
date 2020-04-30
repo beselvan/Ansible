@@ -47,11 +47,11 @@
    enabled: true
   tags: restart
 
-#- name: Get init password Jenkins
-#  become: true
-#  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
-#  register: result
-#- name: Print password
-#  debug:
-#   var: result.stdout
+- name: Get init password Jenkins
+  become: true
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: result
+- name: Print password
+  debug:
+   var: result.stdout
 ...
