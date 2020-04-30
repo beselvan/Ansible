@@ -1,12 +1,11 @@
 ---
-- name: Copying Kubernetes repo file
+- name: Kubernetes repo file copy
   become: true
   tags: kube
-
   copy:
    src: ./files/kubernetes.repo
    dest: /etc/yum.repos.d/kubernetes.repo
-- name: Installing Kubeadm Kubelet Kubectl 
+- name: Kubernetes Installation
   become: true
   tags: kube
   yum:

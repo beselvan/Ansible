@@ -34,7 +34,7 @@
    owner: jenkins
   tags: copy
 
-- name: Adding jenkins user to docker
+- name: Jenkins user addition to docker group
   user:
     name: jenkins
     group: docker
@@ -47,7 +47,7 @@
    enabled: true
   tags: restart
 
-- name: Get init password Jenkins
+- name: Jenkins password fetch
   become: true
   command: sudo cat /var/lib/jenkins/secrets/initialAdminPassword
   register: result

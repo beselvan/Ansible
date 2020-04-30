@@ -1,26 +1,26 @@
 ---
-- name: Installing Docker Prerequisite packages
+- name: Docker Prerequisite packages Installation
   become: true
   get_url:
    url: https://download.docker.com/linux/centos/docker-ce.repo
    dest: /etc/yum.repos.d/docker-ce.repo
    mode: 0644
-- name: Creating group docker
+- name: Docker group creation
   group:
     name: docker
     state: present
-- name:  Installing Docker latest version
+- name:  Docker Installation
   become: true
   yum:
    name: docker-ce
    state: present
-- name:  Starting and Enabling Docker service
+- name:  Docker service start and enable
   become: true
   service:
    name: docker
    state: started
    enabled: yes
-- name:  Installing Docker Compose
+- name:  Docker Compose Installation
   become: true
   yum:
    name: docker-compose.noarch

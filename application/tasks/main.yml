@@ -1,7 +1,5 @@
 ---
-# tasks file for application
-
- - name: Checkout The Code From Github Using Ansible.
+ - name: Application code checkout from GITHUB
    git:
      repo: https://github.com/beselvan/LoginApp.git
      dest: /home/mycloud245/LoginApp
@@ -11,9 +9,6 @@
    register: mavenlog
    tags: maven
 
-# - debug:
-#    var: mavenlog
-#   tags: maven
 
  - name: Docker-Compose the package
    become: true
@@ -21,7 +16,3 @@
    register: log
    tags: docker
 
-# - name: Docker-Compose the package
-#   debug:
-#    var: log
-#   tags: docker
