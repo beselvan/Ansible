@@ -5,7 +5,7 @@
    - linux-tools
    - mvn
    - docker
-   #- jenkins
-   #- application
+   - jenkins
+   - application
    - kubernetes
    
