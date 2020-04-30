@@ -1,9 +1,11 @@
 - hosts: web
   become: true
+  gather_facts: no
   roles:
    - linux-tools
    - mvn
    - docker
    - jenkins
    - application
+   - kubernetes
    

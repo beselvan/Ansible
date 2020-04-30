@@ -49,9 +49,10 @@
 
 - name: Get init password Jenkins
   become: true
-  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  command: sudo cat /var/lib/jenkins/secrets/initialAdminPassword
   register: result
 - name: Print password
+  become: true
   debug:
    var: result.stdout
 ...
